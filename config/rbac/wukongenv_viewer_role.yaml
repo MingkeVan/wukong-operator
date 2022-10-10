@@ -1,0 +1,20 @@
+# permissions for end users to view wukongenvs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: wukongenv-viewer-role
+rules:
+- apiGroups:
+  - wukong.wukong.io
+  resources:
+  - wukongenvs
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - wukong.wukong.io
+  resources:
+  - wukongenvs/status
+  verbs:
+  - get

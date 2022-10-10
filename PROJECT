@@ -1,0 +1,19 @@
+domain: wukong.io
+layout:
+- go.kubebuilder.io/v3
+plugins:
+  manifests.sdk.operatorframework.io/v2: {}
+  scorecard.sdk.operatorframework.io/v2: {}
+projectName: wukong-operator
+repo: github.com/MingkeVan/wukong-operator
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: wukong.io
+  group: wukong
+  kind: WukongEnv
+  path: github.com/MingkeVan/wukong-operator/api/v1alpha1
+  version: v1alpha1
+version: "3"

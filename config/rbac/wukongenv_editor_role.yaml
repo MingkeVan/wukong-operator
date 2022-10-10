@@ -1,0 +1,24 @@
+# permissions for end users to edit wukongenvs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: wukongenv-editor-role
+rules:
+- apiGroups:
+  - wukong.wukong.io
+  resources:
+  - wukongenvs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - wukong.wukong.io
+  resources:
+  - wukongenvs/status
+  verbs:
+  - get
